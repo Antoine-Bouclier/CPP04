@@ -1,25 +1,25 @@
-#ifndef ANIMAL_HPP
-#define ANIMAL_HPP
+#ifndef WRONGANIMAL_HPP
+#define WRONGANIMAL_HPP
 
 #include "iostream"
 
-class Animal
+class WrongAnimal
 {
 	protected:
 		std::string	_type;
 	public:
 		/* -- Constructors -- */
-		Animal();
-		Animal(std::string type);
+		WrongAnimal();
+		WrongAnimal(std::string type);
 
 		/* -- Copy Constructor -- */
-		Animal(const Animal	&copy);
+		WrongAnimal(const WrongAnimal	&copy);
 
 		/* -- Assignement operator -- */
-		Animal& operator=(const Animal &src);
+		WrongAnimal& operator=(const WrongAnimal &src);
 
 		/* -- Destructor -- */
-		virtual ~Animal();
+		virtual ~WrongAnimal();
 
 		/* -- Getters -- */
 		const std::string	getType() const;
