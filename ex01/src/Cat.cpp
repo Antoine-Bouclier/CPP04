@@ -2,12 +2,12 @@
 
 Cat::Cat() : Animal("Cat"), _brain(new Brain())
 {
-	std::cout << "cat: Default Constructor called." << std::endl;
+	std::cout << BLUE "cat: Default Constructor called." RESET << std::endl;
 }
 
 Cat::Cat(const Cat	&copy)
 {
-	std::cout << "Cat: Copy Constructor called." << std::endl;
+	std::cout << BLUE "Cat: Copy Constructor called." RESET << std::endl;
 	*this = copy;
 }
 Cat& Cat::operator=(const Cat &src)
@@ -17,18 +17,19 @@ Cat& Cat::operator=(const Cat &src)
 		this->_type = src._type;
 		this->_brain = src._brain;
 	}
-	std::cout << "Cat: Assignement copy constructor called" << std::endl;
+	std::cout << BLUE "Cat: Assignement copy constructor called" RESET << std::endl;
 	return (*this);
 }
 
 Cat::Cat(std::string type) : Animal(type), _brain(new Brain())
 {
-	std::cout << "Cat: Constructor called with type." << std::endl;
+	std::cout << BLUE "Cat: Constructor called with type." RESET << std::endl;
 }
 
 Cat::~Cat()
 {
-	std::cout << "Cat: Default Destructor called." << std::endl;
+	std::cout << BLUE "Cat: Default Destructor called." RESET << std::endl;
+	delete this->_brain;
 }
 
 Brain*	Cat::getBrain() const
@@ -38,6 +39,6 @@ Brain*	Cat::getBrain() const
 
 void	Cat::makeSound() const
 {
-	std::cout << "Miaou Miaou" << std::endl;
+	std::cout << BLUE "Miaou Miaou" RESET << std::endl;
 	delete this->_brain;
 }

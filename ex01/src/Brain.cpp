@@ -3,13 +3,13 @@
 /* -- Default Constructor -- */
 Brain::Brain() : _index(0)
 {
-	std::cout << "Brain: Default Constructor called." << std::endl;
+	std::cout << YELLOW "Brain: Default Constructor called." RESET << std::endl;
 }
 
 /* -- Copy Constructor -- */
 Brain::Brain(const Brain &copy)
 {
-	std::cout << "Brain: Copy Constructor called." << std::endl;
+	std::cout << YELLOW "Brain: Copy Constructor called." RESET << std::endl;
 	*this = copy;
 }
 
@@ -22,14 +22,14 @@ Brain& Brain::operator=(const Brain &src)
 			this->_ideas[i] = src._ideas[i];
 		this->_index = src._index;
 	}
-	std::cout << "Brain: Assignement copy constructor called" << std::endl;
+	std::cout << YELLOW "Brain: Assignement copy constructor called" RESET << std::endl;
 	return (*this);
 }
 
 /* -- Destructor -- */
 Brain::~Brain()
 {
-	std::cout << "Brain: Default destructor called." << std::endl;
+	std::cout << YELLOW "Brain: Default destructor called." RESET << std::endl;
 }
 
 /* -- Getters -- */
@@ -39,8 +39,8 @@ const std::string	Brain::getidea(unsigned int i) const
 		return (this->_ideas[i]);
 	else
 	{
-		std::cout << "Invalid index!" << std::endl;
-		std::cout << "Valid index: [0-" << this->_index << "]" << std::endl;
+		std::cout << YELLOW "Invalid index!" << std::endl;
+		std::cout << "Valid index: [0-" << this->_index << "]" RESET << std::endl;
 	}
 	return (NULL);
 }

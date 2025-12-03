@@ -2,18 +2,18 @@
 
 Dog::Dog() : Animal("Dog"), _brain(new Brain())
 {
-	std::cout << "Dog: Default Constructor called." << std::endl;
+	std::cout << RED "Dog: Default Constructor called." RESET << std::endl;
 }
 
 Dog::Dog(const Dog	&copy)
 {
-	std::cout << "Dog: Copy Constructor called." << std::endl;
+	std::cout << RED "Dog: Copy Constructor called." RESET << std::endl;
 	*this = copy;
 }
 
 Dog::Dog(std::string type) : Animal(type), _brain(new Brain())
 {
-	std::cout << "Cat: Constructor called with type." << std::endl;
+	std::cout << RED "Cat: Constructor called with type." RESET << std::endl;
 }
 Dog& Dog::operator=(const Dog &src)
 {
@@ -22,13 +22,14 @@ Dog& Dog::operator=(const Dog &src)
 		this->_type = src._type;
 		this->_brain = src._brain;
 	}
-	std::cout << "Dog: Assignement copy constructor called" << std::endl;
+	std::cout << RED "Dog: Assignement copy constructor called" RESET << std::endl;
 	return (*this);
 }
 
 Dog::~Dog()
 {
-	std::cout << "Dog: Default Destructor called." << std::endl;
+	std::cout << RED "Dog: Default Destructor called." RESET << std::endl;
+	delete this->_brain;
 }
 
 Brain*	Dog::getBrain() const
@@ -38,6 +39,6 @@ Brain*	Dog::getBrain() const
 
 void	Dog::makeSound() const
 {
-	std::cout << "Wouaf Wouaf" << std::endl;
+	std::cout << RED "Wouaf Wouaf" RESET << std::endl;
 	delete this->_brain;
 }

@@ -2,29 +2,29 @@
 
 Animal::Animal() : _type("Default")
 {
-	std::cout << "Animal: Default Constructor called." << std::endl;
+	std::cout << GREEN "Animal: Default Constructor called." RESET << std::endl;
 }
 
 Animal::Animal(std::string type) : _type(type)
 {
-	std::cout << "Animal: Parameterized Constructor called." << std::endl;
+	std::cout << GREEN "Animal: Parameterized Constructor called." RESET << std::endl;
 }
 Animal::Animal(const Animal	&copy)
 {
-	std::cout << "Animal: Copy Constructor called." << std::endl;
+	std::cout << GREEN "Animal: Copy Constructor called." RESET << std::endl;
 	*this = copy;
 }
 Animal& Animal::operator=(const Animal &src)
 {
 	if (this != &src)
 		this->_type = src._type;
-	std::cout << "Animal: Assignement copy constructor called" << std::endl;
+	std::cout << GREEN "Animal: Assignement copy constructor called" RESET << std::endl;
 	return (*this);
 }
 
 Animal::~Animal()
 {
-	std::cout << "Animal: Default Destructor called." << std::endl;
+	std::cout << GREEN "Animal: Default Destructor called." RESET << std::endl;
 }
 
 /* -- Getters -- */
@@ -41,5 +41,5 @@ void	Animal::setType(const std::string &type)
 
 void	Animal::makeSound() const
 {
-	std::cout << "make noises" << std::endl;
+	std::cout << GREEN "make noises"  RESET<< std::endl;
 }
