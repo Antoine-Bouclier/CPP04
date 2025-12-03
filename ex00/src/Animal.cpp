@@ -1,45 +1,45 @@
-#include "WrongAnimal.hpp"
+#include "Animal.hpp"
 
-WrongAnimal::WrongAnimal() : _type("Default")
+Animal::Animal() : _type("Default")
 {
-	std::cout << "WrongAnimal: Default Constructor called." << std::endl;
+	std::cout << "Animal: Default Constructor called." << std::endl;
 }
 
-WrongAnimal::WrongAnimal(std::string type) : _type(type)
+Animal::Animal(std::string type) : _type(type)
 {
-	std::cout << "WrongAnimal: Parameterized Constructor called." << std::endl;
+	std::cout << "Animal: Parameterized Constructor called." << std::endl;
 }
-WrongAnimal::WrongAnimal(const WrongAnimal	&copy)
+Animal::Animal(const Animal	&copy)
 {
-	std::cout << "WrongAnimal: Copy Constructor called." << std::endl;
+	std::cout << "Animal: Copy Constructor called." << std::endl;
 	*this = copy;
 }
-WrongAnimal& WrongAnimal::operator=(const WrongAnimal &src)
+Animal& Animal::operator=(const Animal &src)
 {
 	if (this != &src)
 		this->_type = src._type;
-	std::cout << "WrongAnimal: Assignement copy constructor called" << std::endl;
+	std::cout << "Animal: Assignement copy constructor called" << std::endl;
 	return (*this);
 }
 
-WrongAnimal::~WrongAnimal()
+Animal::~Animal()
 {
-	std::cout << "WrongAnimal: Default Destructor called." << std::endl;
+	std::cout << "Animal: Default Destructor called." << std::endl;
 }
 
 /* -- Getters -- */
-const std::string	WrongAnimal::getType() const
+const std::string	Animal::getType() const
 {
 	return (this->_type);
 }
 
 /* -- Setters -- */
-void	WrongAnimal::setType(const std::string &type)
+void	Animal::setType(const std::string &type)
 {
 	this->_type = type;
 }
 
-void	WrongAnimal::makeSound() const
+void	Animal::makeSound() const
 {
 	std::cout << "make noises" << std::endl;
 }
