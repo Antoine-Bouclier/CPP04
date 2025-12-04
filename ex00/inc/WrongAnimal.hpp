@@ -24,9 +24,6 @@ class WrongAnimal
 		/* -- Getters -- */
 		const std::string	getType() const;
 
-		/* -- Setters -- */
-		void	setType(const std::string &type);
-
 		virtual void	makeSound() const;
 };
 

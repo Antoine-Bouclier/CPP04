@@ -33,12 +33,6 @@ const std::string	WrongAnimal::getType() const
 	return (this->_type);
 }
 
-/* -- Setters -- */
-void	WrongAnimal::setType(const std::string &type)
-{
-	this->_type = type;
-}
-
 void	WrongAnimal::makeSound() const
 {
 	std::cout << "make noises" << std::endl;

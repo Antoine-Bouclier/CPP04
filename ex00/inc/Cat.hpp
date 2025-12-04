@@ -9,13 +9,9 @@
 
 class Cat : public Animal
 {
-	private:
-
 	public:
 		/* -- Constructors -- */
 		Cat();
-
-		Cat(std::string type);
 
 		/* -- Copy Constructor -- */
 		Cat(const Cat	&copy);
