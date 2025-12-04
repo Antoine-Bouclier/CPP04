@@ -1,5 +1,5 @@
-#include "IMateriaSource.hpp"
-#include "AMateria.hpp"
+#include "MateriaSource.hpp"
+#include "Character.hpp"
 
 int main()
 {

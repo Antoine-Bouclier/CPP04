@@ -3,14 +3,14 @@
 
 #include <iostream>
 #include "AMateria.hpp"
+#include "ICharacter.hpp"
 #include "Colors.hpp"
 
-class Character
+class Character : public ICharacter
 {
 	private:
 		std::string	_name;
-		// inventory 4 slots => 4 Materias | init = empty
-
+		AMateria*	_slots[4];
 	public:
 		/* -- Constructors -- */
 		Character();
@@ -21,6 +21,11 @@ class Character
 		/* -- Destructor -- */
 		~Character();
 
+		/* -- Override pure virtual function -- */
+		virtual std::string const & getName() const;
+		virtual void	equip(AMateria* m);
+		virtual void	unequip(int idx);
+		virtual void	use(int idx, ICharacter& target);
 };
 
 #endif

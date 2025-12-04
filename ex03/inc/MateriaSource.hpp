@@ -3,7 +3,7 @@
 
 #include "IMateriaSource.hpp"
 
-class MateriaSource : virtual public IMateriaSource
+class MateriaSource : public IMateriaSource
 {
 	private:
 		AMateria*	_slots[4];
