@@ -5,10 +5,11 @@
 
 class MateriaSource : virtual public IMateriaSource
 {
+	private:
+		AMateria*	_slots[4];
 	public:
 		/* -- Constructors -- */
 		MateriaSource();
-		MateriaSource(std::string const & type);
 		MateriaSource(const MateriaSource &copy);
 		
 		/* -- Overload Operator -- */
@@ -18,7 +19,7 @@ class MateriaSource : virtual public IMateriaSource
 		~MateriaSource();
 
 		/* -- Override pure virtual function -- */
-		virtual void		learnMateria(AMateria*);
+		virtual void		learnMateria(AMateria* m);
 		virtual AMateria*	createMateria(std::string const & type);
 };
 
