@@ -22,10 +22,10 @@ class Brain
 	Brain& operator=(const Brain &src);
 
 		/* -- Getters -- */
-	const std::string	getidea(unsigned int i) const;
+	const std::string	getIdea(unsigned int i) const;
 
 	/* -- Setters -- */
-	void	setidea(const std::string &idea);
+	void	setIdea(const std::string &idea);
 	
 	/* -- Destructor -- */
 	~Brain();

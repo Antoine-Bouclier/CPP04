@@ -15,15 +15,11 @@ Cat& Cat::operator=(const Cat &src)
 	if (this != &src)
 	{
 		this->_type = src._type;
-		this->_brain = src._brain;
+		delete this->_brain;
+		this->_brain = new Brain(*src._brain);
 	}
 	std::cout << BLUE "Cat: Assignement copy constructor called" RESET << std::endl;
 	return (*this);
-}
-
-Cat::Cat(std::string type) : Animal(type), _brain(new Brain())
-{
-	std::cout << BLUE "Cat: Constructor called with type." RESET << std::endl;
 }
 
 Cat::~Cat()
@@ -40,5 +36,4 @@ Brain*	Cat::getBrain() const
 void	Cat::makeSound() const
 {
 	std::cout << BLUE "Miaou Miaou" RESET << std::endl;
-	delete this->_brain;
 }

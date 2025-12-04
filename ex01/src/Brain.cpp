@@ -18,7 +18,7 @@ Brain& Brain::operator=(const Brain &src)
 {
 	if (this != &src)
 	{
-		for (int i = 0; i < 100; i++)
+		for (unsigned int i = 0; i < src._index; i++)
 			this->_ideas[i] = src._ideas[i];
 		this->_index = src._index;
 	}
@@ -33,21 +33,24 @@ Brain::~Brain()
 }
 
 /* -- Getters -- */
-const std::string	Brain::getidea(unsigned int i) const
+const std::string	Brain::getIdea(unsigned int i) const
 {
 	if (i < this->_index)
 		return (this->_ideas[i]);
 	else
 	{
 		std::cout << YELLOW "Invalid index!" << std::endl;
-		std::cout << "Valid index: [0-" << this->_index << "]" RESET << std::endl;
+		std::cout << "Valid index: [0-" << this->_index << "]" RESET;
 	}
-	return (NULL);
+	return ("");
 }
 
 /* -- Setters -- */
-void	Brain::setidea(const std::string &idea)
+void	Brain::setIdea(const std::string &idea)
 {
-	this->_ideas[this->_index] = idea;
-	this->_index++;
+	if (this->_index < 100)
+	{
+		this->_ideas[this->_index] = idea;
+		this->_index++;
+	}
 }

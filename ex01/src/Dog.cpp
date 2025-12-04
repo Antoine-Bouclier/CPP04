@@ -5,22 +5,18 @@ Dog::Dog() : Animal("Dog"), _brain(new Brain())
 	std::cout << RED "Dog: Default Constructor called." RESET << std::endl;
 }
 
-Dog::Dog(const Dog	&copy)
+Dog::Dog(const Dog	&copy) : Animal(copy), _brain(new Brain(*copy._brain))
 {
 	std::cout << RED "Dog: Copy Constructor called." RESET << std::endl;
-	*this = copy;
 }
 
-Dog::Dog(std::string type) : Animal(type), _brain(new Brain())
-{
-	std::cout << RED "Cat: Constructor called with type." RESET << std::endl;
-}
 Dog& Dog::operator=(const Dog &src)
 {
 	if (this != &src)
 	{
 		this->_type = src._type;
-		this->_brain = src._brain;
+		delete this->_brain;
+		this->_brain = new Brain(*src._brain);
 	}
 	std::cout << RED "Dog: Assignement copy constructor called" RESET << std::endl;
 	return (*this);
@@ -40,5 +36,4 @@ Brain*	Dog::getBrain() const
 void	Dog::makeSound() const
 {
 	std::cout << RED "Wouaf Wouaf" RESET << std::endl;
-	delete this->_brain;
 }
