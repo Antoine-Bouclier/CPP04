@@ -1,11 +1,11 @@
 #include "Cat.hpp"
 
-Cat::Cat() : Animal("Cat"), _brain(new Brain())
+Cat::Cat() : AAnimal("Cat"), _brain(new Brain())
 {
 	std::cout << BLUE "cat: Default Constructor called." RESET << std::endl;
 }
 
-Cat::Cat(const Cat	&copy) : Animal(copy), _brain(new Brain(*copy._brain))
+Cat::Cat(const Cat	&copy) : AAnimal(copy), _brain(new Brain(*copy._brain))
 {
 	std::cout << BLUE "Cat: Copy Constructor called." RESET << std::endl;
 }

@@ -15,7 +15,6 @@ class Dog : public Animal
 	public:
 		/* -- Constructors -- */
 		Dog();
-		Dog(std::string type);
 
 		/* -- Copy Constructor -- */
 		Dog(const Dog	&copy);

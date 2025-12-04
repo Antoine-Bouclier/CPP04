@@ -1,34 +1,34 @@
-#ifndef CAT_HPP
-#define CAT_HPP
+#ifndef DOG_HPP
+#define DOG_HPP
 
 #include <iostream>
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 #include "Brain.hpp"
 
-#define BLUE "\033[34m"
+#define RED "\033[31m"
 #define RESET "\033[0m"
 
-class Cat : public Animal
+class Dog : public AAnimal
 {
 	private:
 		Brain	*_brain;
 	public:
 		/* -- Constructors -- */
-		Cat();
+		Dog();
 
 		/* -- Copy Constructor -- */
-		Cat(const Cat	&copy);
+		Dog(const Dog	&copy);
 
 		/* -- Assignement operator -- */
-		Cat& operator=(const Cat &src);
+		Dog& operator=(const Dog &src);
 
 		/* -- Destructor -- */
-		virtual ~Cat();
+		~Dog();
 
 		/* -- Getter -- */
 		Brain*	getBrain() const;
 
-		virtual void	makeSound() const;
+		void	makeSound() const;
 };
 
 

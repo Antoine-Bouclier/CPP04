@@ -2,13 +2,13 @@
 #define CAT_HPP
 
 #include <iostream>
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 #include "Brain.hpp"
 
 #define BLUE "\033[34m"
 #define RESET "\033[0m"
 
-class Cat : public Animal
+class Cat : public AAnimal
 {
 	private:
 		Brain	*_brain;
@@ -23,12 +23,12 @@ class Cat : public Animal
 		Cat& operator=(const Cat &src);
 
 		/* -- Destructor -- */
-		virtual ~Cat();
+		~Cat();
 
 		/* -- Getter -- */
 		Brain*	getBrain() const;
 
-		virtual void	makeSound() const;
+		void	makeSound() const;
 };
 
 

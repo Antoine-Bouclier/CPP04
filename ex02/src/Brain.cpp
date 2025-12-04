@@ -40,7 +40,7 @@ const std::string	Brain::getIdea(unsigned int i) const
 	else
 	{
 		std::cout << YELLOW "Invalid index!" << std::endl;
-		std::cout << "Valid index: [0-" << this->_index << "]" RESET;
+		std::cout << "Valid index: [0-" << this->_index << "]" RESET << std::endl;
 	}
 	return ("");
 }
