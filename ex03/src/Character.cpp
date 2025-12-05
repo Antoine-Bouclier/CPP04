@@ -69,7 +69,7 @@ void	Character::unequip(int idx)
 	else
 	{
 		std::cout << this->_name << ": remove from his inventory " << this->_slots[idx]->getType() << std::endl;
-		this->_name[idx] = NULL;
+		this->_slots[idx] = NULL;
 	}
 
 }

@@ -24,7 +24,15 @@ MateriaSource	&MateriaSource::operator=(const MateriaSource &src)
 	if (this != &src)
 	{
 		for (int i = 0; i < 4; i++)
-			this->_slots[i] = src._slots[i]->clone();
+		{
+			if (this->_slots[i])
+			{
+				delete this->_slots[i];
+				this->_slots[i] = NULL;
+			}
+			if (src._slots[i])
+				this->_slots[i] = src._slots[i]->clone();
+		}
 	}
 	return (*this);
 }
@@ -45,7 +53,7 @@ void MateriaSource::learnMateria(AMateria* m)
 	{
 		if (!this->_slots[i])
 		{
-			this->_slots[i] = m->clone();
+			this->_slots[i] = m;
 			return ;
 		}
 	}

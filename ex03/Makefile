@@ -6,7 +6,7 @@ SRC_DIR		=	src/
 OBJ_DIR		=	obj/
 INC_DIR		=	inc/
 
-SRC_FILES	=	main.cpp Animal.cpp Cat.cpp Dog.cpp Brain.cpp
+SRC_FILES	=	main.cpp AMateria.cpp Character.cpp Cure.cpp Ice.cpp MateriaSource.cpp
 OBJ_FILES	=	$(SRC_FILES:.cpp=.o)
 DEP_FILES	=	$(OBJ_FILES:.o=.d)
 
