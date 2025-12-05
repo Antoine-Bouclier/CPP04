@@ -26,7 +26,7 @@ class WrongCat : public WrongAnimal
 		/* -- Destructor -- */
 		virtual ~WrongCat();
 
-		virtual void	makeSound() const;
+		void	makeSound() const;
 };
 
 
