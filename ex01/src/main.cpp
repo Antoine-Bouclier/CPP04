@@ -59,6 +59,35 @@ int main()
 
 		std::cout << "dog1 idea[2]	" << dog1->getBrain()->getIdea(2) << std::endl;
 		std::cout << "dog2 idea[2]	" << dog2->getBrain()->getIdea(2) << std::endl;
+		
+
+		delete	dog1;
+
+		std::cout << "dog2 idea[0]	" << dog2->getBrain()->getIdea(0) << std::endl; 
+		std::cout << "dog2 idea[1]	" << dog2->getBrain()->getIdea(1) << std::endl;
+		std::cout << "dog2 idea[2]	" << dog2->getBrain()->getIdea(2) << std::endl;
+
+		delete	dog2;
+	}
+
+	{
+		Dog*	dog1 = new Dog();
+		
+		dog1->makeSound();
+		dog1->getBrain()->setIdea("manger");
+		dog1->getBrain()->setIdea("dormir");
+		
+		std::cout << "dog1 idea[0]	" << dog1->getBrain()->getIdea(0) << std::endl; 
+		std::cout << "dog1 idea[1]	" << dog1->getBrain()->getIdea(1) << std::endl;
+
+		Dog*	dog2 = new Dog();
+		*dog2 = *dog1;
+
+		dog2->getBrain()->setIdea("jouer");
+
+		std::cout << "dog1 idea[2]	" << dog1->getBrain()->getIdea(2) << std::endl;
+		std::cout << "dog2 idea[2]	" << dog2->getBrain()->getIdea(2) << std::endl;
+		
 
 		delete	dog1;
 
