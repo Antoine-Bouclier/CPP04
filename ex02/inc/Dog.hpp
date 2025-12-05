@@ -28,7 +28,7 @@ class Dog : public AAnimal
 		/* -- Getter -- */
 		Brain*	getBrain() const;
 
-		void	makeSound() const;
+		virtual void	makeSound() const;
 };
 
 

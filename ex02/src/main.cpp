@@ -69,6 +69,7 @@ void	dogPointer()
 
 int	main(void)
 {
+	// AAnimal	test;
 	std::cout << "-- TEST CAT --" << std::endl << std::endl;
 	cat();
 	std::cout << std::endl;

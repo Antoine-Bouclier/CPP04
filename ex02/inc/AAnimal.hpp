@@ -27,6 +27,7 @@ class AAnimal
 		/* -- Getters -- */
 		const std::string	getType() const;
 
+		/* -- pure virtual function -- */
 		virtual void	makeSound() const = 0;
 };
 
