@@ -1,12 +1,12 @@
 #include "Character.hpp"
 
-Character::Character() : _name("Default")
+Character::Character() : _name("Default"), _floorCount(0)
 {
 	for (int i = 0; i < 4; i++)
 		this->_slots[i] = NULL;
 }
 
-Character::Character(std::string name) : _name(name)
+Character::Character(std::string name) : _name(name), _floorCount(0)
 {
 	for (int i = 0; i < 4; i++)
 		this->_slots[i] = NULL;
@@ -68,8 +68,16 @@ void	Character::unequip(int idx)
 	}
 	else
 	{
-		std::cout << this->_name << ": remove from his inventory " << this->_slots[idx]->getType() << std::endl;
-		this->_slots[idx] = NULL;
+		if (this->_floorCount < 100)
+		{
+			std::cout << this->_name << ": remove from his inventory " << this->_slots[idx]->getType() << std::endl;
+			this->_floor[this->_floorCount] = this->
+_slots[idx];
+			this->_floorCount++;
+			this->_slots[idx] = NULL;
+		}
+		else
+			std::cout << "no more place on the floor." << std::endl;
 	}
 
 }
@@ -81,4 +89,15 @@ void	Character::use(int idx, ICharacter& target)
 		this->_slots[idx]->use(target);
 		return ;
 	}
+}
+
+/* -- Getters -- */
+AMateria* const*	Character::getFloor() const
+{
+	return (this->_floor);
+}
+
+int	Character::getFloorCount() const
+{
+	return (this->_floorCount);
 }
