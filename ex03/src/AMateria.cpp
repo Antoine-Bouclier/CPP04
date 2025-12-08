@@ -19,7 +19,8 @@ AMateria::AMateria(const AMateria &copy) : _type(copy._type)
 /* -- Overload Operator -- */
 AMateria	&AMateria::operator=(const AMateria &src)
 {
-	(void)src;
+	if (this != &src)
+		this->_type = src._type;
 	return (*this);
 }
 

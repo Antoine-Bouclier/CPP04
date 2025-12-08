@@ -4,12 +4,16 @@ Character::Character() : _name("Default"), _floorCount(0)
 {
 	for (int i = 0; i < 4; i++)
 		this->_slots[i] = NULL;
+	for (int i = 0; i < 100; i++)
+		this->_floor[i] = NULL;
 }
 
 Character::Character(std::string name) : _name(name), _floorCount(0)
 {
 	for (int i = 0; i < 4; i++)
 		this->_slots[i] = NULL;
+	for (int i = 0; i < 100; i++)
+		this->_floor[i] = NULL;
 }
 
 Character::Character(const Character &copy)
@@ -28,8 +32,27 @@ Character& Character::operator=(const Character &src)
 {
 	if (this != &src)
 	{
+		this->_name = src._name;
 		for (int i = 0; i < 4; i++)
+		{
+			if (this->_slots[i])
+			delete	_slots[i];
+			if (src._slots[i])
 			this->_slots[i] = src._slots[i]->clone();
+			else
+			this->_slots[i] = NULL;
+		}
+		for (int i = 0; i < this->_floorCount; i++)
+		{
+			if (this->_floor[i])
+				delete	this->_floor[i];
+			this->_floor[i] = NULL;
+		}
+		this->_floorCount = src._floorCount;
+		for (int i = 0; i < src._floorCount; i++)
+		{
+			this->_floor[i] = src._floor[i]->clone();
+		}
 	}
 	return (*this);
 }

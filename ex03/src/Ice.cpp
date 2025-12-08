@@ -3,11 +3,12 @@
 /* -- Constructors -- */
 Ice::Ice() : AMateria("ice")
 {
+	 std::cout << "Ice default constructor\n";
 }
 
-Ice::Ice(const Ice &copy)
+Ice::Ice(const Ice &copy) : AMateria(copy)
 {
-	this->_type = copy._type;
+	std::cout << "Ice copy constructor\n";
 }
 		
 /* -- Overload Operator -- */
