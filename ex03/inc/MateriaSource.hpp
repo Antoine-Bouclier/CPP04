@@ -21,6 +21,7 @@ class MateriaSource : public IMateriaSource
 		/* -- Override pure virtual function -- */
 		virtual void		learnMateria(AMateria* m);
 		virtual AMateria*	createMateria(std::string const & type);
+
 };
 
 #endif

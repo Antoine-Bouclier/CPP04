@@ -25,6 +25,7 @@ class Character : public ICharacter
 
 		/* Getters */
 		AMateria* const*	getFloor() const;
+		AMateria* const*	getSlots() const;
 		int					getFloorCount() const;
 
 		/* -- Override pure virtual function -- */

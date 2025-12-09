@@ -36,18 +36,22 @@ Character& Character::operator=(const Character &src)
 		for (int i = 0; i < 4; i++)
 		{
 			if (this->_slots[i])
-			delete	_slots[i];
+			{
+				delete	_slots[i];
+				this->_slots[i] = NULL;
+			}
 			if (src._slots[i])
-			this->_slots[i] = src._slots[i]->clone();
-			else
-			this->_slots[i] = NULL;
+				this->_slots[i] = src._slots[i]->clone();
 		}
 		for (int i = 0; i < this->_floorCount; i++)
 		{
 			if (this->_floor[i])
+			{
 				delete	this->_floor[i];
-			this->_floor[i] = NULL;
+				this->_floor[i] = NULL;
+			}
 		}
+		this->_floorCount = 0;
 		this->_floorCount = src._floorCount;
 		for (int i = 0; i < src._floorCount; i++)
 		{
@@ -62,7 +66,15 @@ Character::~Character()
 	for (int i= 0; i < 4; i++)
 	{
 		if (this->_slots[i])
+		{
 			delete this->_slots[i];
+			this->_slots[i] = NULL;
+		}
+	}
+	for (int i= 0; i < this->_floorCount; i++)
+	{
+		if (this->_floor[i])
+			delete this->_floor[i];
 	}
 }
 
@@ -73,14 +85,24 @@ std::string const & Character::getName() const
 
 void	Character::equip(AMateria* m)
 {
+	if (!m)
+	{
+		std::cout << "need a valid AMateria object" << std::endl;
+		return ;
+	}
 	for (int i = 0; i < 4; i++)
 	{
-		if (!this->_slots[i])
+		if (!this->_slots[i] && !m->getEquipped())
 		{
 			this->_slots[i] = m;
+			m->setEquipped(true);
 			return ;
 		}
 	}
+	if (m->getEquipped())
+		return ;
+	delete m;
+	std::cout << "not enough space in the inventory." << std::endl;
 }
 
 void	Character::unequip(int idx)
@@ -94,13 +116,12 @@ void	Character::unequip(int idx)
 		if (this->_floorCount < 100)
 		{
 			std::cout << this->_name << ": remove from his inventory " << this->_slots[idx]->getType() << std::endl;
-			this->_floor[this->_floorCount] = this->
-_slots[idx];
+			this->_floor[this->_floorCount] = this->_slots[idx];
 			this->_floorCount++;
 			this->_slots[idx] = NULL;
 		}
 		else
-			std::cout << "no more place on the floor." << std::endl;
+			std::cout << "not enough space on the floor." << std::endl;
 	}
 
 }
@@ -123,4 +144,9 @@ AMateria* const*	Character::getFloor() const
 int	Character::getFloorCount() const
 {
 	return (this->_floorCount);
+}
+
+AMateria* const*	Character::getSlots() const
+{
+	return (this->_slots);
 }

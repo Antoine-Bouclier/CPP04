@@ -9,6 +9,7 @@ class AMateria
 {
 	protected:
 		std::string _type;
+		bool		_equipped;
 	public:
 		/* -- Constructors -- */
 		AMateria();
@@ -21,8 +22,12 @@ class AMateria
 		/* -- Destructor -- */
 		virtual ~AMateria();
 
-		/* Getters */
-		std::string const & getType() const; //Returns the materia type
+		/* -- Setters -- */
+		void	setEquipped(bool b);
+
+		/* -- Getters -- */
+		std::string const &	getType() const;
+		bool				getEquipped() const;
 
 		/* Pure virtual function */
 		virtual AMateria*	clone() const = 0;

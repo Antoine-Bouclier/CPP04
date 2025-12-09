@@ -1,12 +1,12 @@
 #include "AMateria.hpp"
 
 /* -- Constructors -- */
-AMateria::AMateria() : _type("Default")
+AMateria::AMateria() : _type("Default"), _equipped(false)
 {
 
 }
 
-AMateria::AMateria(std::string const & type) : _type(type)
+AMateria::AMateria(std::string const & type) : _type(type), _equipped(false)
 {
 
 }
@@ -30,6 +30,12 @@ AMateria::~AMateria()
 
 }
 
+/* -- Setters -- */
+void	AMateria::setEquipped(bool b)
+{
+	this->_equipped = b;
+}
+
 /* Getters */
 std::string const & AMateria::getType() const
 {
@@ -39,4 +45,9 @@ std::string const & AMateria::getType() const
 void		AMateria::use(ICharacter& target)
 {
 	(void)target;
+}
+
+bool	AMateria::getEquipped() const
+{
+	return (this->_equipped);
 }
