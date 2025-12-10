@@ -314,7 +314,7 @@ int main()
 	deepCopyMateria();
 	std::cout << std::endl;
 
-	// Test 11: deep copy materia
+	// Test 11: Character->equip(NULL)
 	std::cout << "TEST 11: Character->equip(NULL)" << std::endl;
 	equipNull();
 	std::cout << std::endl;

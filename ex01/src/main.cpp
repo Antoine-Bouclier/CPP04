@@ -4,6 +4,8 @@
 int main()
 {
 	{
+		// Test requested in the subject
+		std::cout << "TEST requested in the subject" << std::endl;
 		Animal*	a[20];
 
 		for (int i = 0; i < 20; i++)
@@ -23,9 +25,12 @@ int main()
 		{
 			delete a[i];
 		}
+		std::cout << std::endl;
 	}
 
 	{
+		// Test verification polymorphism
+		std::cout << "TEST polymorphism" << std::endl;
 		Animal*	b = new Dog();
 		Animal* c = b;
 		Animal* d = new Cat();
@@ -41,9 +46,12 @@ int main()
 		d->makeSound();
 
 		delete b;
+		std::cout << std::endl;
 	}
 
 	{
+		// test deep copy
+		std::cout << "TEST deep copy" << std::endl;
 		Dog*	dog1 = new Dog();
 		
 		dog1->makeSound();
@@ -68,9 +76,11 @@ int main()
 		std::cout << "dog2 idea[2]	" << dog2->getBrain()->getIdea(2) << std::endl;
 
 		delete	dog2;
+		std::cout << std::endl;
 	}
 
 	{
+		std::cout << "TEST assignement operator" << std::endl;
 		Dog*	dog1 = new Dog();
 		
 		dog1->makeSound();
@@ -85,8 +95,8 @@ int main()
 
 		dog2->getBrain()->setIdea("jouer");
 
-		std::cout << "dog1 idea[2]	" << dog1->getBrain()->getIdea(2) << std::endl;
 		std::cout << "dog2 idea[2]	" << dog2->getBrain()->getIdea(2) << std::endl;
+		std::cout << "dog1 idea[2]	" << dog1->getBrain()->getIdea(2) << std::endl;
 		
 
 		delete	dog1;
@@ -96,6 +106,7 @@ int main()
 		std::cout << "dog2 idea[2]	" << dog2->getBrain()->getIdea(2) << std::endl;
 
 		delete	dog2;
+		std::cout << std::endl;
 	}
 
 	return 0;

@@ -42,12 +42,12 @@ std::string const & AMateria::getType() const
 	return (this->_type);
 }
 
-void		AMateria::use(ICharacter& target)
-{
-	(void)target;
-}
-
 bool	AMateria::getEquipped() const
 {
 	return (this->_equipped);
+}
+
+void		AMateria::use(ICharacter& target)
+{
+	(void)target;
 }

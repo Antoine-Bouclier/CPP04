@@ -29,5 +29,4 @@ class WrongCat : public WrongAnimal
 		void	makeSound() const;
 };
 
-
 #endif
