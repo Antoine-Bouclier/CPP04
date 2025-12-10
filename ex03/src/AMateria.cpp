@@ -11,7 +11,7 @@ AMateria::AMateria(std::string const & type) : _type(type), _equipped(false)
 
 }
 
-AMateria::AMateria(const AMateria &copy) : _type(copy._type)
+AMateria::AMateria(const AMateria &copy) : _type(copy._type), _equipped(copy._equipped)
 {
 
 }
